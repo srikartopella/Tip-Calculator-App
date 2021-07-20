@@ -1,44 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <!-- Link to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+    <!-- link to CSS -->
+    <link rel="stylesheet" href="./src/styles/styles.css" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  Bill
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <p class="brand">
+      <img src="./images/logo.svg" alt="img" />
+    </p>
 
-  Number of People
+    <section class="card-component">
+      <section class="user-input">
+        <section class="bill-section">
+          <label class="label">Bill</label>
+          <section class="icon">
+            <img
+              src="./images/icon-dollar.svg"
+              class="actual-icon dollar-icon"
+              id="iconImage"
+            />
+            <input
+              type="number"
+              name="bill"
+              class="input dollar-input"
+              id="totalAmount"
+              placeholder="0"
+            />
+          </section>
+        </section>
+        <section class="tip-section">
+          <label class="label">Selet Tip %</label>
+          <section class="btn-section">
+            <button class="btn" id="btn" name="five-percent" value="5">
+              5%
+            </button>
+            <button class="btn" id="btn" name="ten" value="10">10%</button>
+            <button class="btn" id="btn" name="fifteen" value="15">15%</button>
+            <button class="btn" id="btn" name="twenty-five" value="25">
+              25%
+            </button>
+            <button class="btn" id="btn" name="fifty" value="50">50%</button>
+            <input
+              type="number"
+              name="custom"
+              id="customPercent"
+              placeholder="Custom"
+              class="input"
+            />
+          </section>
+        </section>
+        <section class="people-section">
+          <section class="error">
+            <label class="label">Number of People</label>
+            <label class="label error-msg hide" id="error-msg"
+              >Can't be zero</label
+            >
+          </section>
+          <section class="icon">
+            <img
+              src="./images/icon-person.svg"
+              class="actual-icon person-icon"
+              id="iconImage"
+            />
+            <input
+              type="number"
+              name="no-of-people people-input"
+              id="noOfPeople"
+              placeholder="0"
+              min="1"
+              value="1"
+              class="input"
+            />
+          </section>
+        </section>
+      </section>
+      <section class="tip-preview">
+        <section class="group">
+          <section class="tip--amount__display">
+            <section class="per-people">
+              <p class="tip-total">Tip Amount</p>
+              <p>/ person</p>
+            </section>
+            <span class="amount">$<span class="people-amount">0.00</span></span>
+          </section>
+          <section class="total--amount__display">
+            <section class="total-person">
+              <p class="tip-total">Total</p>
+              <p>/ person</p>
+            </section>
+            <span class="amount">$<span class="person-amount">0.00</span></span>
+          </section>
+        </section>
+        <section class="reset-section">
+          <button class="reset-btn" id="resetBtn" disabled>RESET</button>
+        </section>
+      </section>
+    </section>
 
-  Tip Amount
-  / person
+    <button class="btn-bug" id="bugBtn">Bug Report</button>
+    <section class="bug-report hide" id="bug-form">
+      <form class="form" name="bug" method="POST" data-netlify="true">
+        <h2>Bug Report</h2>
+        <section class="name">
+          <label class="label">Your Name</label>
+          <input
+            type="text"
+            class="input"
+            name="username"
+            placeholder="Your Name"
+          />
+        </section>
+        <section class="message">
+          <label class="label">Your Message</label>
+          <textarea
+            name="User Message"
+            id="message"
+            placeholder="Explain As detailed as possible"
+            cols="30"
+            rows="10"
+          ></textarea>
+        </section>
+        <button class="btn-send" id="sendBtn">Send Report</button>
+      </form>
+    </section>
 
-  Total
-  / person
+    <script src="./src/scripts/main.js"></script>
 
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <script>
+      const bugBtn = document.querySelector("#bugBtn");
+      const bugForm = document.querySelector("#bug-form");
+
+      bugBtn.addEventListener("click", () => {
+        bugForm.classList.toggle("hide");
+      });
+    </script>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#" target="_blank">Srikar Topella</a>.
+    </div>
+  </body>
 </html>
