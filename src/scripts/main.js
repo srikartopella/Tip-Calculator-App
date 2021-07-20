@@ -17,7 +17,7 @@ let userData = {
 // Functions
 function calculateTip(amount, person, percent) {
   let tip = amount * (percent / 100);
-  let totalCost = (tip + amount) * person;
+  let totalCost = (tip + amount) / person;
 
   if (percent == 0) {
     return [amount.toString().slice(0, 3) / person];
