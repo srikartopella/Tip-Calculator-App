@@ -243,7 +243,7 @@ body {
   font-weight: var(--bold);
   cursor: pointer;
   padding: 0.5rem 0.3rem;
-  margin: 0.5rem;
+  margin: 0.7rem;
   color: var(--lg-cyan2);
   background-color: var(--very-dark-cyan);
   border: 2px solid var(--very-dark-cyan);
@@ -325,7 +325,7 @@ textarea:focus {
 
 /* Attribution */
 .attribution {
-  margin-top: 2rem;
+  margin: 2.5rem 0;
 }
 
 .attribution a {
