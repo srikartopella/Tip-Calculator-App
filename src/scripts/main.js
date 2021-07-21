@@ -1,6 +1,6 @@
 // Selectors
 const billInput = document.getElementById("totalAmount");
-const btnGroup = document.querySelectorAll("#btn");
+const btnGroup = document.querySelectorAll(".btn-group");
 const customPercent = document.querySelector("#customPercent");
 const errMsg = document.querySelector("#error-msg");
 const peopleInput = document.querySelector("#noOfPeople");
@@ -105,6 +105,10 @@ btnGroup.forEach((btn) => {
 });
 
 customPercent.addEventListener("input", () => {
-  userData.percent = parseFloat(customPercent.value);
-  updateContent();
+  if (customPercent.value) {
+    userData.percent = parseFloat(customPercent.value);
+    updateContent();
+  } else {
+    updateContent();
+  }
 });
